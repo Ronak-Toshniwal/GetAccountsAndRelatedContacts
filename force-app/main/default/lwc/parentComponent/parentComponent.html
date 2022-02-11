@@ -1,0 +1,19 @@
+<template>
+    <template if:true={temp}>
+        <div class="cardWidthParent ">
+            <p class="slds-p-horizontal_small ">
+                <template for:each={simplifiedList} for:item="it">
+                    <lightning-card key={it.id} title={it.id} icon-name="standard:account">
+                        <template if:true={it.con}>
+                            <template for:each={it.con} for:item="con">
+                                <div key={con.Id}>
+                                    <c-child-component mydata={con} class="compP"></c-child-component>
+                                </div>
+                            </template>
+                        </template>
+                    </lightning-card>
+                </template>
+            </p>
+        </div>
+    </template>
+</template>
